@@ -675,21 +675,21 @@
   #define DELTA_DIAGONAL_ROD 280.0        // (mm)
 
   // Distance between bed and nozzle Z home position
-  #define DELTA_HEIGHT 356.09             // (mm) Get this value from G33 auto calibrate
+  #define DELTA_HEIGHT 356.05             // (mm) Get this value from G33 auto calibrate
   //#define DELTA_HEIGHT 372.00             // (mm) Get this value from G33 auto calibrate
 
 
-  #define DELTA_ENDSTOP_ADJ { -0.42, -0.05, 0.00 } // Get these values from G33 auto calibrate
+  #define DELTA_ENDSTOP_ADJ { -0.59, 0.00, -0.23 } // Get these values from G33 auto calibrate
   //#define DELTA_ENDSTOP_ADJ { 0.0, 0.0, 0.0 } // Get these values from G33 auto calibrate
 
   // Horizontal distance bridged by diagonal push rods when effector is centered.
-  #define DELTA_RADIUS 141.69             // (mm) Get this value from G33 auto calibrate
+  #define DELTA_RADIUS 141.78             // (mm) Get this value from G33 auto calibrate
   //#define DELTA_RADIUS 140.8              // (mm) Get this value from G33 auto calibrate
 
   // Trim adjustments for individual towers
   // tower angle corrections for X and Y tower / rotate XYZ so Z tower angle = 0
   // measured in degrees anticlockwise looking from above the printer
-  #define DELTA_TOWER_ANGLE_TRIM { 0.06, -0.39, 0.33 } // Get these values from G33 auto calibrate
+  #define DELTA_TOWER_ANGLE_TRIM { 0.00, -0.34, 0.34 } // Get these values from G33 auto calibrate
   //#define DELTA_TOWER_ANGLE_TRIM { 0.0, 0.0, 0.0 } // Get these values from G33 auto calibrate
 
   // Delta radius and diagonal rod adjustments (mm)
@@ -916,7 +916,7 @@
  *
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
-#define S_CURVE_ACCELERATION
+//#define S_CURVE_ACCELERATION
 
 //===========================================================================
 //============================= Z Probe Options =============================
