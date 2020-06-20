@@ -675,21 +675,21 @@
   #define DELTA_DIAGONAL_ROD 280.0        // (mm)
 
   // Distance between bed and nozzle Z home position
-  #define DELTA_HEIGHT 356.23             // (mm) Get this value from G33 auto calibrate
+  #define DELTA_HEIGHT 356.09             // (mm) Get this value from G33 auto calibrate
   //#define DELTA_HEIGHT 372.00             // (mm) Get this value from G33 auto calibrate
 
 
-  #define DELTA_ENDSTOP_ADJ { -0.44, -0.22, 0.00 } // Get these values from G33 auto calibrate
+  #define DELTA_ENDSTOP_ADJ { -0.42, -0.05, 0.00 } // Get these values from G33 auto calibrate
   //#define DELTA_ENDSTOP_ADJ { 0.0, 0.0, 0.0 } // Get these values from G33 auto calibrate
 
   // Horizontal distance bridged by diagonal push rods when effector is centered.
-  #define DELTA_RADIUS 141.64             // (mm) Get this value from G33 auto calibrate
+  #define DELTA_RADIUS 141.69             // (mm) Get this value from G33 auto calibrate
   //#define DELTA_RADIUS 140.8              // (mm) Get this value from G33 auto calibrate
 
   // Trim adjustments for individual towers
   // tower angle corrections for X and Y tower / rotate XYZ so Z tower angle = 0
   // measured in degrees anticlockwise looking from above the printer
-  #define DELTA_TOWER_ANGLE_TRIM { 0.17, -0.43, 0.26 } // Get these values from G33 auto calibrate
+  #define DELTA_TOWER_ANGLE_TRIM { 0.06, -0.39, 0.33 } // Get these values from G33 auto calibrate
   //#define DELTA_TOWER_ANGLE_TRIM { 0.0, 0.0, 0.0 } // Get these values from G33 auto calibrate
 
   // Delta radius and diagonal rod adjustments (mm)
@@ -1392,7 +1392,7 @@
   //#define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
 
   #define MESH_INSET 0              // Set Mesh bounds as an inset region of the bed
-  #define GRID_MAX_POINTS_X 10      // Don't use more than 15 points per axis, implementation limited.
+  #define GRID_MAX_POINTS_X 15      // Don't use more than 15 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   #define UBL_MESH_EDIT_MOVES_Z     // Sophisticated users prefer no movement of nozzle
