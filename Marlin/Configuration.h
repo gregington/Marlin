@@ -461,7 +461,7 @@
 // Above this temperature the heater will be switched off.
 // This can protect components from overheating, but NOT from shorts and failures.
 // (Use MINTEMP for thermistor short/failure protection.)
-#define HEATER_0_MAXTEMP 285
+#define HEATER_0_MAXTEMP 275
 #define HEATER_1_MAXTEMP 275
 #define HEATER_2_MAXTEMP 275
 #define HEATER_3_MAXTEMP 275
@@ -511,9 +511,9 @@
   // #define DEFAULT_Kd 74.59
 
   // FLSUN QQ-S E3D V6, 205 C with 100% part cooling
-  #define DEFAULT_Kp 30.75
-  #define DEFAULT_Ki 3.37
-  #define DEFAULT_Kd 70.26
+  #define DEFAULT_Kp 47.39
+  #define DEFAULT_Ki 6.72
+  #define DEFAULT_Kd 83.57
 
 #endif // PIDTEMP
 
@@ -563,9 +563,9 @@
   //#define DEFAULT_bedKd 1675.16
 
   // FLSUN QQ-S stock 1.6mm aluminium heater with 4mm lattice glass
-  #define DEFAULT_bedKp 70.16
-  #define DEFAULT_bedKi 13.67
-  #define DEFAULT_bedKd 239.96
+  #define DEFAULT_bedKp 55.10
+  #define DEFAULT_bedKi 9.81
+  #define DEFAULT_bedKd 206.11
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -676,11 +676,11 @@
   #define DELTA_DIAGONAL_ROD 280.0        // (mm)
 
   // Distance between bed and nozzle Z home position
-  #define DELTA_HEIGHT 355.68             // (mm) Get this value from G33 auto calibrate
+  #define DELTA_HEIGHT 351.3867             // (mm) Get this value from G33 auto calibrate
   //#define DELTA_HEIGHT 372.00             // (mm) Get this value from G33 auto calibrate
 
 
-  #define DELTA_ENDSTOP_ADJ { -0.88, -1.52, 0.00 } // Get these values from G33 auto calibrate
+  #define DELTA_ENDSTOP_ADJ { -0.7, -1.22, 0.00 } // Get these values from G33 auto calibrate
   //#define DELTA_ENDSTOP_ADJ { 0.0, 0.0, 0.0 } // Get these values from G33 auto calibrate
 
   // Horizontal distance bridged by diagonal push rods when effector is centered.
@@ -690,7 +690,7 @@
   // Trim adjustments for individual towers
   // tower angle corrections for X and Y tower / rotate XYZ so Z tower angle = 0
   // measured in degrees anticlockwise looking from above the printer
-  #define DELTA_TOWER_ANGLE_TRIM { -0.02, -0.32, 0.35 } // Get these values from G33 auto calibrate
+  #define DELTA_TOWER_ANGLE_TRIM { -0.06, -0.29, 0.34 } // Get these values from G33 auto calibrate
   //#define DELTA_TOWER_ANGLE_TRIM { 0.0, 0.0, 0.0 } // Get these values from G33 auto calibrate
 
   // Delta radius and diagonal rod adjustments (mm)
@@ -835,7 +835,9 @@
 
 // delta speeds must be the same on xyz
 #define DEFAULT_XYZ_STEPS_PER_UNIT ((XYZ_FULL_STEPS_PER_ROTATION) * (XYZ_MICROSTEPS) / double(XYZ_BELT_PITCH) / double(XYZ_PULLEY_TEETH))
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { DEFAULT_XYZ_STEPS_PER_UNIT, DEFAULT_XYZ_STEPS_PER_UNIT, DEFAULT_XYZ_STEPS_PER_UNIT, 393 }  // default steps per unit
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   { DEFAULT_XYZ_STEPS_PER_UNIT, DEFAULT_XYZ_STEPS_PER_UNIT, DEFAULT_XYZ_STEPS_PER_UNIT, 393 }  // default steps per unit
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { DEFAULT_XYZ_STEPS_PER_UNIT, DEFAULT_XYZ_STEPS_PER_UNIT, DEFAULT_XYZ_STEPS_PER_UNIT, 2700 }  // default steps per unit
+
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -855,7 +857,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 1000, 1000, 1000, 1000 }
+#define DEFAULT_MAX_ACCELERATION      { 1000, 1000, 1000, 120 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -892,11 +894,11 @@
 
   //#define LIMITED_JERK_EDITING        // Limit edit via M205 or LCD to DEFAULT_aJERK * 2
   #if ENABLED(LIMITED_JERK_EDITING)
-    #define MAX_JERK_EDIT_VALUES { 20, 20, 0.6, 10 } // ...or, set your own edit limits
+    #define MAX_JERK_EDIT_VALUES { 20, 20, 20, 10 } // ...or, set your own edit limits
   #endif
 #endif
 
-#define DEFAULT_EJERK    5.0  // May be used by Linear Advance
+#define DEFAULT_EJERK    0.6  // May be used by Linear Advance
 
 /**
  * Junction Deviation Factor
@@ -1071,7 +1073,7 @@
  *
  * Specify a Probe position as { X, Y, Z }
  */
-#define NOZZLE_TO_PROBE_OFFSET { 0, 0, -21.5 }
+#define NOZZLE_TO_PROBE_OFFSET { 0, 0, -25 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1178,7 +1180,7 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR true
+#define INVERT_E0_DIR false
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
